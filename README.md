@@ -26,19 +26,17 @@ The scripts were run in R version 4.0.5 using the following packages:
      + Zone: wave exposure zone (*flank1* and *flank2* have intermediate wave exposure, *front* has high wave exposure, and *back* is sheltered)
      + Latitude: site latitude
      + Longitude: site longitude
-     + median_ubed90: 90<sup>th</sup>  quantile of bottom stress (summarised as the median value for each site)
+     + median_ubed90: 90<sup>th</sup>  quantile of horizontal water velocity at bed (m s<sup>-1</sup>) (summarised as the median value for each site)
      + per_suitable: proportion of hards substrate available
-     + PAR8_median: median daily integrated photosynthetically active radiation (PAR) at 8m 
-     + temp_median: median temperature
+     + Secchi_median: median Secchi depth (m)
+     + temp_median: median temperature (degrees C)
 
-   - realised_upper_limits.csv: contains the estimates of realised upper limits for each site (wave exposure zone within reef)
-     + Reef: reef
-     + Zone: wave exposure zone (*flank1* and *flank2* have intermediate wave exposure, *front* has high wave exposure, and *back* is sheltered)
-     + carrying: realised upper limit estimate (in percentage)
-       
+     # Output files
    - rds files: contain the fitted models, can be called in brms (using the file function) to avoid rerunning the models.
 
 
      # Scripts
-     - Get_realised_upper_limits.R: summarises the manta tow data by site (wave exposure zone within reef) for each year, interpolates for missing years, calculates the 5yr-running mean, and indentifies instances when coral cover estabilises around its maximum level. This script generates the file realised_upper_limits.csv.
-     - Fit_models.R: fits models to predict 1) realised upper limits as a function of potential upper limits, and 2) realised upper limits as a function of temperature, benthic stress, and light (when the percentage of hard substrate is at least 80%). This scripts generates the figures and results shown in the manuscritp.
+     - Upper_limits.R:
+       + estimates upper limits from time series coral cover data
+       + fits models
+       + generates figures shown in the manuscript
