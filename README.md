@@ -1,16 +1,16 @@
 # Upper limits of coral communities
-This repository containds the data and code to reproduce the results of the manuscript "Upper limits in the cover of coral communities across spatial scales".
+This repository containds the data and code to reproduce the results of the manuscript "Spatial variation in upper limits of coral cover on the Great Barrier Reef".
 
-The scripts were run in R version 4.0.5 using the following packages:
+The scripts were run in R version 4.3.2 using the following packages:
 
-- brms (version 2.18.0)
-- patchwork (version 1.1.1)
-- viridis (version 0.6.2)
-- dplyr (version 1.1.1)
-- ggplot2 (version 3.4.2)
-- reshape2 (version 1.4.4)
+- brms (version 2.20.4)
+- patchwork (version 1.2.0)
+- viridis (version 0.6.4)
+- dplyr (version 1.1.4)
+- ggplot2 (version 3.5.1)
 
-    # Data files
+
+    ## Data files ##
    - coral_cover.csv: contains coral cover (Scleractinian corals) estimates from the manta tow surveys. Each row corresponds to one tow.
      + YEAR_CODE: financial year when the survey was conducted (e.g., 201415 is for 2014-2015)
      + REEF_NAME: reef
@@ -31,12 +31,15 @@ The scripts were run in R version 4.0.5 using the following packages:
      + Secchi_median: median Secchi depth (m)
      + temp_median: median temperature (degrees C)
 
-     # Output files
+     ## Output files ##
    - rds files: contain the fitted models, can be called in brms (using the file function) to avoid rerunning the models.
+   - manuscript figures
 
 
-     # Scripts
-     - Upper_limits.R:
+     ## Code ##
+     - analyses.R:
        + estimates upper limits from time series coral cover data
        + fits models
        + generates figures shown in the manuscript
+     - functions.R:
+       + includes the required functions to run the analyses
