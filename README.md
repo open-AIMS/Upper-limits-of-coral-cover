@@ -1,5 +1,5 @@
 # Upper limits of coral communities
-This repository containds the data and code to reproduce the results of the manuscript "Spatial variation in upper limits of coral cover on the Great Barrier Reef".
+This repository contains the data and code to reproduce the results of the manuscript "Spatial variation in upper limits of coral cover on the Great Barrier Reef".
 
 The scripts were run in R version 4.3.2 using the following packages:
 
@@ -9,6 +9,7 @@ The scripts were run in R version 4.3.2 using the following packages:
 - dplyr (version 1.1.4)
 - ggplot2 (version 3.5.1)
 
+To run the code, the working directory must have three folders: *Data* (which should *coral_cover.csv* and *environmental_variables.csv*), *Code* (which should contain *analyses.R* and *functions.R*), and *Outputs* (where models and plots will be saved).
 
     ## Data files ##
    - coral_cover.csv: contains coral cover (Scleractinian corals) estimates from the manta tow surveys. Each row corresponds to one tow.
@@ -28,12 +29,8 @@ The scripts were run in R version 4.3.2 using the following packages:
      + Longitude: site longitude
      + median_ubed90: 90<sup>th</sup>  quantile of horizontal water velocity at bed (m s<sup>-1</sup>) (summarised as the median value for each site)
      + per_suitable: proportion of hards substrate available
-     + Secchi_median: median Secchi depth (m)
      + temp_median: median temperature (degrees C)
-
-     ## Output files ##
-   - rds files: contain the fitted models, can be called in brms (using the file function) to avoid rerunning the models.
-   - manuscript figures
+     + Secchi_median: median Secchi depth (m)
 
 
      ## Code ##
@@ -43,3 +40,5 @@ The scripts were run in R version 4.3.2 using the following packages:
        + generates figures shown in the manuscript
      - functions.R:
        + includes the required functions to run the analyses
+
+
